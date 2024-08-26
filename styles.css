@@ -1,0 +1,97 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Default font for body */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffff00 50%, #ffffff 50%); /* Gradient from yellow to white */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: black; /* Adjusted to black for better visibility on yellow background */
+}
+
+.header h1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(135, 14, 14);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold; /* Make the text bold */
+    position: relative; /* Position relative to use pseudo-elements */
+    display: inline-block; /* Ensure the underline fits the text width */
+}
+
+.header h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px; /* Adjust the thickness of the underline */
+    background-color: black; /* Color of the underline */
+    transform: scaleY(0.5); /* Scale down the height to create the half underline effect */
+    transform-origin: bottom; /* Ensure scaling happens from the bottom */
+}
+
+.reviews {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the items */
+    gap: 20px; /* Space between the cards */
+    width: 100%;
+    max-width: 1200px; /* Set max-width for better layout control */
+}
+
+.review-card {
+    background-color: #e0e0e0; /* Grey color for the cards */
+    border-radius: 15px;
+    width: 300px; /* Fixed width for each card */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 24px 48px rgba(0, 0, 0, 0.25); /* Darker and more pronounced shadow on hover */
+}
+
+.review-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.review-content h3 {
+    margin: 10px 0 5px;
+    color: #333;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif; /* Font for review titles */
+}
+
+.star-rating {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #ffd700; /* Gold color for stars */
+}
+
+.review-content p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
